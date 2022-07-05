@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
     public class GameManager : MonoBehaviour
     {
@@ -25,8 +26,14 @@ using UnityEditor;
         EditorApplication.isPlaying = false;
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+
     // Start is called before the first frame update
-    void Start()
+        void Start()
         {
 
         }
