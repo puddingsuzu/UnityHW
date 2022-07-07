@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance;
+
         void Awake()
         {
             if (instance != null)
@@ -28,9 +29,18 @@ using UnityEngine.SceneManagement;
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LoadingScece");
     }
 
+    public void EndGame()
+    {
+        SceneManager.LoadScene("LoadingScece");
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     // Start is called before the first frame update
         void Start()
