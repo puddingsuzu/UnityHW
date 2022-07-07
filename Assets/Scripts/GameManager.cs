@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-    public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
     {
-        public static GameManager instance;
+    public static GameManager instance;
 
-        void Awake()
+    void Awake()
         {
             if (instance != null)
             {
@@ -21,20 +23,20 @@ using UnityEngine.SceneManagement;
             instance = this;
         }
 
-    public void Exit()
-    {
-        Application.Quit();
-        EditorApplication.isPlaying = false;
-    }
-
     public void StartGame()
     {
         SceneManager.LoadScene("LoadingScece");
+    }
+    public void Exit()
+    {
+        Application.Quit();
+        //EditorApplication.isPlaying = false;
     }
 
     public void EndGame()
     {
         SceneManager.LoadScene("LoadingScece");
+        StartCoroutine("LoadScene");
     }
 
     public void Retry()
@@ -42,10 +44,11 @@ using UnityEngine.SceneManagement;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // Start is called before the first frame update
-        void Start()
-        {
 
+    // Start is called before the first frame update
+    void Start()
+        {
+        
         }
 
         // Update is called once per frame
