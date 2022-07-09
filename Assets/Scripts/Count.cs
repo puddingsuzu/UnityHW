@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class Count : MonoBehaviour
 {
     public GameObject EndMenu;
-    public Text seedCount;
+    public GameObject SeedMaxOnoff;
+    public GameObject SeedCountOnoff;
+    public Text SeedMax;
+    public Text SeedCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +19,12 @@ public class Count : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        seedCount.text = Grass.Seed.ToString();
+        SeedCount.text = Grass.Seed.ToString();
         if (Grass.Seed == 20)
         {
             EndMenu.SetActive(true);
+            SeedMaxOnoff.SetActive(false);
+            SeedCountOnoff.SetActive(false);
         }
     }
 
