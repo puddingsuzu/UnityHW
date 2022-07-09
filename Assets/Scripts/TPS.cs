@@ -49,7 +49,6 @@ public class TPS : MonoBehaviour
         // vertical rotate
         Vector3 vTempR = Vector3.Cross(Vector3.up, mHorizontalVector);
         mTotalRotateVertical += fMY;
-        Debug.Log(mTotalRotateVertical);
         if (mTotalRotateVertical > mLookDownLimit)
         {
             mTotalRotateVertical = mLookDownLimit;

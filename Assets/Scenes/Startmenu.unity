@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2914679838023790957, guid: cd70d975ca19d8e4e819408608a69343, type: 3}
       propertyPath: m_Name
-      value: Panel
+      value: LoadingScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd70d975ca19d8e4e819408608a69343, type: 3}

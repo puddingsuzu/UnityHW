@@ -24,10 +24,12 @@ public class LoadingScene : MonoBehaviour
     public void EndGame()
     {
         SceneManager.LoadScene(0);
+        Grass.Seed = 0;
     }
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Grass.Seed = 0;
     }
 
     IEnumerator LoadScene(int NextScene)
