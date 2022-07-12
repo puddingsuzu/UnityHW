@@ -6,10 +6,14 @@ using UnityEngine.UI;
 public class Grass : MonoBehaviour
 {
     public static int Seed = 0;
-
     public GameObject grass;
-    public ObjectPool pool;
-    public float m_lifetime = 1000.0f;
+    public float m_LifeTime;
+    private float m_NewLifeTime;
+
+    private void Awake()
+    {
+        m_NewLifeTime = m_LifeTime;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +24,11 @@ public class Grass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_lifetime -= 1.0f * Time.deltaTime;
-        if (m_lifetime < 0)
+        m_LifeTime -= 1.0f * Time.deltaTime;
+        if (m_LifeTime < 0)
         {
-            pool.Recovery(grass);
-            Debug.Log("Recovery");
+            ObjectPool.instance.Recovery(gameObject);
+            m_LifeTime = m_NewLifeTime;
         }
     }
 

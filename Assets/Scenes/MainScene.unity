@@ -1435,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7171294786661462787, guid: e4a25c09f58775346b1ca061ee2559b0, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7171294786661462787, guid: e4a25c09f58775346b1ca061ee2559b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 589076084}
-  SpawnTime: 1
+  SpawnTime: 0.5
 --- !u!1 &1187217766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,7 +1733,7 @@ RectTransform:
   - {fileID: 1265411905}
   - {fileID: 1187217767}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

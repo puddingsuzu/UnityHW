@@ -93,8 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grass: {fileID: 3080467412989366288}
-  pool: {fileID: 7202482739776424703, guid: f34f6add2d7323944b0f6df433a7b5c2, type: 3}
-  m_lifetime: 20
+  m_LifeTime: 5
 --- !u!114 &3082349967558548077
 MonoBehaviour:
   m_ObjectHideFlags: 0

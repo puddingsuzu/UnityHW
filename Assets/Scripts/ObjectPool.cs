@@ -6,11 +6,22 @@ public class ObjectPool : MonoBehaviour
 {
     public GameObject prefab;
     public int initailSize = 20;
-
     private Queue<GameObject> m_pool = new Queue<GameObject>();
+    public static ObjectPool instance;
 
     void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogErrorFormat(gameObject,
+            "Multiple instances of {0} is not allow", GetType().Name);
+            DestroyImmediate(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+        instance = this;
+
         for (int i = 0; i < initailSize; i++)
         {
             GameObject go = Instantiate(prefab) as GameObject;
@@ -41,5 +52,9 @@ public class ObjectPool : MonoBehaviour
     {
         m_pool.Enqueue(recovery);
         recovery.SetActive(false);
+    }
+    private void Update()
+    {
+       // Debug.Log(m_pool.Count);
     }
 }
