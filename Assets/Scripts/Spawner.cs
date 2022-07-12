@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-        public ObjectPool pool;
         public float SpawnTime = 1.0f;
         private float Timer;
 
@@ -13,7 +12,7 @@ public class Spawner : MonoBehaviour
             if (Time.time > Timer + SpawnTime)
             {
                 Timer = Time.time;
-            GameObject.Find("ObjectPool").GetComponent<ObjectPool>().ReUse(new Vector3(Random.Range(25, 47), 4.0f, Random.Range(26, 50)), transform.rotation);
+                ObjectPool.instance.ReUse(new Vector3(Random.Range(25, 47), 4.0f, Random.Range(26, 50)), transform.rotation);
             }
         }
 }

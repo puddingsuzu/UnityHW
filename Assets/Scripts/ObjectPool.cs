@@ -53,8 +53,4 @@ public class ObjectPool : MonoBehaviour
         m_pool.Enqueue(recovery);
         recovery.SetActive(false);
     }
-    private void Update()
-    {
-       // Debug.Log(m_pool.Count);
-    }
 }

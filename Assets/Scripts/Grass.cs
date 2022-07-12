@@ -9,6 +9,7 @@ public class Grass : MonoBehaviour
     public GameObject grass;
     public float m_LifeTime;
     private float m_NewLifeTime;
+    private Vector3 newx;
 
     private void Awake()
     {
@@ -36,7 +37,8 @@ public class Grass : MonoBehaviour
     {
         if (c.tag.Equals("Player"))
         {
-            Destroy(gameObject);
+            ObjectPool.instance.Recovery(gameObject);
+            //Destroy(gameObject);
             Seed += 1;
         }
     }

@@ -13,6 +13,20 @@ public class LoadingScene : MonoBehaviour
     private float ProgressValue;
     private AsyncOperation async = null;
 
+    public static LoadingScene instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogErrorFormat(gameObject,
+            "Multiple instances of {0} is not allow", GetType().Name);
+            DestroyImmediate(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+        instance = this;
+    }
+
     public void StartGame()
     {
         StartCoroutine(LoadScene(1));
@@ -23,6 +37,7 @@ public class LoadingScene : MonoBehaviour
     }
     public void EndGame()
     {
+        //StartCoroutine(LoadScene(0));
         SceneManager.LoadScene(0);
         Grass.Seed = 0;
     }

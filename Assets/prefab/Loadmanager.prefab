@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd078c873303e49b930de195a8a4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadScreen: {fileID: 0}
+  LoadScreen: {fileID: 1802502623457980239}
   slider: {fileID: 0}
   Progress: {fileID: 0}
